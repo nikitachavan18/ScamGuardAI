@@ -1,2 +1,2 @@
 # ScamGuardAI
-This is asuperb project by Coding Ninjas Batch.
+This is a superb project by Coding Ninjas Batch.
