@@ -1,5 +1,4 @@
 # ScamGuardAI
-# ScamGuardAI
 
 LLM powered application to detect Scam messages.
 
