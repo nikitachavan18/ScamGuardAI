@@ -16,7 +16,7 @@ git pull
 
 ### Environment management
 ```
-conda create -n <env_name> python=3.14 -y
+conda create -n <env_name> python=3.11 -y
 conda activate <env_name>
 conda deactivate
 pip install -r requirements.txt
@@ -24,33 +24,67 @@ pip install -r requirements.txt
 
 ### For creating venv using Python
 ```
-winget install Python.Python.3.14
+winget install Python.Python.3.11
 After installation, close and reopen PowerShell, then verify:
-py -3.14 --version
+py -3.11 --version
 You should see something like:
-Python 3.14.7
+Python 3.11.9
 Then create your environment:
-py -3.14 -m venv scamgaurd
+py -3.11 -m venv scamgaurd
 Activate:
 .\scamgaurd\Scripts\Activate.ps1
 ```
+### Setup the Environment variables
+- Update the `.env-template` file to `.env` file
+- Add your `GEMINI_API_KEY`
+
+### Run the app
+Activate the virtual environment, then the run the app with the following command.
+```
+python main.py
+```
+
+To run the UI, activate the virtual environment, and run the below command.
+```
+streamlit run streamlit\app.py
+```
+To close the streamlit session, command `CTRL + C` in your terminal
 
 ### Installation Guides
 Refer to this playlist: https://www.youtube.com/playlist?list=PLU6QHAXUQhYlalHlpLyF4DH7WLfPvuXV4
 
 ## Project Structure
-ScamGuardAI
-- experiments
-    - `workflow.ipynb`
-- llm
-    - `__init__.py`
-- pipeline
-    - `__init__.py`
-- streamlit
-    - `__init__.py`
-- .gitignore
-- LICENSE
-- README.md
-- requirements.txt
-- main.py
-- utils.py
+
+```text
+ScamGuardAI/
+├── .env
+├── .env-template
+├── .gitignore
+├── LICENSE
+├── README.md
+├── requirements.txt
+├── __init__.py
+├── config.py
+├── main.py
+├── utils.py
+├── experiments/
+│   └── workflow.ipynb
+├── llm/
+│   ├── __init__.py
+│   ├── client.py
+│   ├── prompts.py
+│   └── prompt_library/
+│       ├── __init__.py
+│       └── react.md
+├── pipeline/
+│   ├── __init__.py
+│   └── scam_detector/
+│       ├── __init__.py
+│       ├── builder.py
+│       ├── detector.py
+│       ├── executor.py
+│       └── parser.py
+└── streamlit/
+    ├── __init__.py
+    └── app.py
+```
