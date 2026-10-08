@@ -1,7 +1,7 @@
 """
 All helper functions are listed here
-
 """
+
 import logging
 import re
 import json
