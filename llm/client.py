@@ -7,6 +7,7 @@ from google import genai
 from config import GEMINI_API_KEY, DEFAULT_MODEL, MAX_RETRIES, RETRY_DELAY
 from utils import get_logger
 
+
 logger = get_logger(__name__)
 
 class LLMClient:

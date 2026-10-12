@@ -1,3 +1,4 @@
+
 from pathlib import Path
 from utils import load_file
 
@@ -14,5 +15,9 @@ def generate_prompt(user_input: str) -> str:
     """
     Generate a prompt for scam detection
     """
-    template = PROMPT
+    # template = PROMPT
+    template = load_prompt("react.md")
+    print("*"*50)
+    print(f"{template}\n\nUser Message:\n{user_input.strip()}")
+    print("*"*50)
     return f"{template}\n\nUser Message:\n{user_input.strip()}"

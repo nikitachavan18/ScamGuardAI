@@ -22,6 +22,7 @@ def main():
     # test_message = "You have an unclaimed policy for $10000, fill the details to claim it, otherwise it will expire in the next 2 hours."
     test_message = input("Enter your message to detect scam: ")
 
+
     try:
         logger.info("Running the scam detection workflow.")
         result = detector.detect(test_message)
